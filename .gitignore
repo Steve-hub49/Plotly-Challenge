@@ -1,6 +1,14 @@
+# ignore dotfiles/folders but not .gitignore
+.*
+!/.gitignore
+
+# API and config keys
+api_keys.py
+config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+*.py[cod] 
 *$py.class
 
 # C extensions
