@@ -65,7 +65,7 @@ function buildMetadata(samples) {
       var labels = data.otu_ids.slice(0,10);
       var display = data.otu_labels.slice(0,10);
   
-      var pieChart = [{
+     var pieChart = [{
         values: values,
         labels: labels,
         hovertext: display,
@@ -78,7 +78,7 @@ function buildMetadata(samples) {
     
   });
     
-  };
+ };
   
   function init() {
 
