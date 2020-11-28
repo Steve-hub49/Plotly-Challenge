@@ -23,6 +23,8 @@ function buildMetadata(samples) {
   
   // var plotData = `/samples/${sample}`;
     var plotData = "samples.json";
+
+
 //   d3.json(plotData).then(function(sample){ 
 //       var metaData= sample.metadata;
 //       var array = metaData.filter(obj => obj.id == samples);
@@ -74,6 +76,7 @@ function buildMetadata(samples) {
       }];
       Plotly.newPlot('bar', pieChart);
   
+   
     });
     
   });
@@ -117,3 +120,19 @@ function buildMetadata(samples) {
   
   
   init();
+
+
+
+
+  // new bar chart data entered here
+
+// var data = [{
+  // type: 'bar',
+  // var x_axis = data.otu_ids;
+  // var y_axis = data.sample_values;
+  // orientation: 'h'
+// }];
+
+// Plotly.newPlot('bar', data);
+
+// end of bar chart data
