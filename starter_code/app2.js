@@ -123,16 +123,43 @@ function buildMetadata(samples) {
 
 
 
+  //  Build a bar Chart
 
-  // new bar chart data entered here
+  // function buildMetadata(samples) {
 
-// var data = [{
-  // type: 'bar',
-  // var x_axis = data.otu_ids;
-  // var y_axis = data.sample_values;
-  // orientation: 'h'
-// }];
+      // var plotData = "samples.json";
+      // d3.json(plotData).then(function(sample){ 
+        // var metaData= sample.metadata;
+        // var array = metaData.filter(obj => obj.id == samples);
+        // var firstItem = array[0]
+      
+        // var sampleData = d3.select('#sample-metadata');
+        // console.log(firstItem)
+        // sampleData.html(" ");
+        
+          // Object.entries(firstItem).forEach(function ([key, value]) {
+          // var row = sampleData.append('panel-body');
+          // row.text(`${key}: ${value} \n`);
+        // })
+        
+        // });     
+    
+    // var bar_data =[
+      // {
+        // y:ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
+        // x:values.slice(0,10).reverse(),
+        // text:labels.slice(0,10).reverse(),
+        // type:"bar",
+        // orientation:"h"
 
-// Plotly.newPlot('bar', data);
+      // }
+    // ];
 
-// end of bar chart data
+    // var barLayout = {
+      // title: "Top 10 Bacteria Cultures Found",
+      // margin: { t: 30, l: 150 }
+    // };
+
+    // Plotly.newPlot("bar", bar_data, barLayout);
+    // });
+    
