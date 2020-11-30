@@ -68,6 +68,8 @@ function buildMetadata(samples) {
       var values = data.sample_values.slice(0,10);
       var labels = data.otu_ids.slice(0,10);
       var display = data.otu_labels.slice(0,10);
+
+    });
   
     var bar = {
 
@@ -81,7 +83,13 @@ function buildMetadata(samples) {
       }
     };  
       
-    var data = [bar];
+    var data = [{
+      type: bar,
+      x: x_axis,
+      y: y_axis,
+      orientation: 'h'
+    }];
+
     var layout = {
       xaxis: {title: "OTU ID"},
       title: "Top Ten OTUs Found in Individual",
@@ -97,7 +105,6 @@ function buildMetadata(samples) {
    
     });
     
-  });
   
   
   function init() {
@@ -134,4 +141,5 @@ function buildMetadata(samples) {
     buildMetadata(newSample);
   };
 
-    init ()};
+  init ()};
+  
