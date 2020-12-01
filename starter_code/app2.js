@@ -13,20 +13,17 @@ function buildMetadata(samples) {
         Object.entries(firstItem).forEach(function ([key, value]) {
         var row = sampleData.append('panel-body');
         row.text(`${key}: ${value} \n`);
+  })
   });
- 
-  });
+
+  }
   
-    };
 
   function buildCharts(samples) {
   
   // var plotData = `/samples/${sample}`;
     var plotData = "samples.json";
-  };
-
-
-//   d3.json(plotData).then(function(sample){ 
+ //   d3.json(plotData).then(function(sample){ 
 //       var metaData= sample.metadata;
 //       var array = metaData.filter(obj => obj.id == samples);
 //       var firstItem = array[0]
@@ -52,8 +49,7 @@ function buildMetadata(samples) {
         size: size, 
         color: color
       }
-    }
-    });
+    };
       
     var data = [bubble];
     var layout = {
@@ -69,19 +65,36 @@ function buildMetadata(samples) {
       var labels = data.otu_ids.slice(0,10);
       var display = data.otu_labels.slice(0,10);
 
-    });
-  
-    var bar = {
+      // var piechart = [{
+        // values: values,
+        // labels: labels,
+        // hovertext: display,
+        // type: "pie"
 
-      x: x_axis,
-      y: y_axis,
-      text: texts,
-      mode: `markers`,
-      marker: {
+      // }];
+      // Plotly.newPlot('bar', pieChart);
+
+    });
+
+  });
+
+};
+
+function init() {
+
+var selector = d3.select(#selDataset);
+
+    
+      var bar = [{
+        x: x_axis,
+        y: y_axis,
+        text: texts,
+        mode: `markers`,
+        marker: {
         size: size, 
         color: color
-      }
-    };  
+    
+    }];  
       
     var data = [{
       type: bar,
@@ -104,14 +117,15 @@ function buildMetadata(samples) {
       var display = data.otu_labels.slice(0,10);
    
     });
+ 
     
-  
-  
   function init() {
 
   
   var selector = d3.select("#selDataset");
-  
+ 
+ 
+ 
 //   var plotData = "samples.json";
 //   d3.json(plotData).then(function(sample){ 
 //       var metaData= sample.metadata;
@@ -134,12 +148,12 @@ function buildMetadata(samples) {
     buildCharts(firstSample);
     buildMetadata(firstSample);
   });
+  }
  
   function optionChanged(newSample) {
     
     buildCharts(newSample);
     buildMetadata(newSample);
-  };
+  }
 
   init ()};
-  
