@@ -65,14 +65,14 @@ function buildMetadata(samples) {
       var labels = data.otu_ids.slice(0,10);
       var display = data.otu_labels.slice(0,10);
 
-      // var piechart = [{
-        // values: values,
-        // labels: labels,
-        // hovertext: display,
-        // type: "pie"
+      var piechart = [{
+        values: values,
+        labels: labels,
+        hovertext: display,
+        type: "pie"
 
-      // }];
-      // Plotly.newPlot('bar', pieChart);
+      }];
+      Plotly.newPlot('bar', pieChart);
 
     });
 
@@ -82,47 +82,48 @@ function buildMetadata(samples) {
 
 function init() {
 
-var selector = d3.select(#selDataset);
+var selector = d3.select("#selDataset");
 
     
-      var bar = [{
-        x: x_axis,
-        y: y_axis,
-        text: texts,
-        mode: `markers`,
-        marker: {
-        size: size, 
-        color: color
+      // var bar = [{
+       // x: x_axis,
+        // y: y_axis,
+        // text: texts,
+        // mode: `markers`,
+        // marker: {
+        // size: size, 
+        // color: color
     
-    }];  
+    // }}];
+    
       
-    var data = [{
-      type: bar,
-      x: x_axis,
-      y: y_axis,
-      orientation: 'h'
-    }];
+    // var data = [{
+      // type: bar,
+      // x: x_axis,
+      // y: y_axis,
+      // orientation: 'h'
+    // }];
 
-    var layout = {
-      xaxis: {title: "OTU ID"},
-      title: "Top Ten OTUs Found in Individual",
+    // var layout = {
+      // xaxis: {title: "OTU ID"},
+      // title: "Top Ten OTUs Found in Individual",
 
-      };
+      // };
 
-    Plotly.newPlot('bar', data, layout);
+    // Plotly.newPlot('bar', data, layout);
 
-    d3.json(plotData).then(function(data) {
-      var values = data.sample_values.slice(0,10);
-      var labels = data.otu_ids.slice(0,10);
-      var display = data.otu_labels.slice(0,10);
+    // d3.json(plotData).then(function(data) {
+      // var values = data.sample_values.slice(0,10);
+      // var labels = data.otu_ids.slice(0,10);
+      // var display = data.otu_labels.slice(0,10);
    
-    });
+    // });
  
     
-  function init() {
+  // function init() {
 
   
-  var selector = d3.select("#selDataset");
+  // var selector = d3.select("#selDataset");
  
  
  
@@ -132,7 +133,7 @@ var selector = d3.select(#selDataset);
 //       var array = metaData.filter(obj => obj.id == sample);
 //       var firstItem = array[0]
 
-  var plotData = "samples.json";
+  plotData = "samples.json";
 
   d3.json(plotData).then((sampleNames) => {
     var names = sampleNames.names;
@@ -156,4 +157,4 @@ var selector = d3.select(#selDataset);
     buildMetadata(newSample);
   }
 
-  init ()};
+  init ();
