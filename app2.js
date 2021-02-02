@@ -60,21 +60,31 @@ function buildMetadata(samples) {
   
     Plotly.newPlot('bubble', data, layout);
   
-    d3.json(plotData).then(function(data) {
-      var values = data.sample_values.slice(0,10);
-      var labels = data.otu_ids.slice(0,10);
-      var display = data.otu_labels.slice(0,10);
+    // Start of bar chart
 
-      var piechart = [{
-        values: values,
-        labels: labels,
-        hovertext: display,
-        type: "pie"
+  
 
-      }];
-      Plotly.newPlot('bar', pieChart);
+    var y_ticks = x_axis.slice(0, 10).map(otuID =>`OTU ${otuID}`).reverse();
+    
+    var values = y_axis.slice(0, 10).reverse();
+    
+    var display = texts.slice(0, 10).reverse();
+    
 
-    });
+    var barChart = [{
+      y: y_ticks,
+      x: values,
+      text: display,
+      type: "bar",
+      orientation: "h"
+    }];
+
+    var barLayout ={ 
+      title: "Top 10 Bacteria",
+      margin: {t:30, l:160}
+    };
+
+    Plotly.newPlot('bar', barChart, barLayout);
 
   });
 
